@@ -1,0 +1,29 @@
+[package]
+name = "rust-mutability"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.25.0", features = ["rt", "sync", "macros", "rt-multi-thread"] }
+
+[[bin]]
+name = "exterior"
+path = "src/exterior.rs"
+
+[[bin]]
+name = "refcell"
+path = "src/interior-refcell.rs"
+
+[[bin]]
+name = "mutex"
+path = "src/interior-mutex.rs"
+
+[[bin]]
+name = "rwlock"
+path = "src/interior-rwlock.rs"
+
+[[bin]]
+name = "actor"
+path = "src/interior-actor.rs"
