@@ -35,7 +35,7 @@ impl Handler<Inc> for Counter {
 
 #[tokio::main]
 async fn main() {
-    let counter = actor::spawn(Counter::new());
+    let counter = actor::spawn(Counter::new(), 20);
 
     println!("Get: {}", counter.send(Get).await);
     println!("Inc(1): {}", counter.send(Inc(1)).await);
